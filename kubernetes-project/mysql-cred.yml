@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: mysql-creds
+  labels:
+    name: mysql-secret
+  namespace: project
+type: Opaque
+data:
+  root-password: c3Jpbml2YXMxMgo=
