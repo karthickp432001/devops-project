@@ -4,7 +4,7 @@
   ## application description
 - Simple todo-list web application using mysql to store tasks in mysql backend.
 
-##Pre-requisites
+## Pre-requisites
 ```sh
 - Docker to containerise front-end and back-end
   - Ref: https://docs.docker.com/engine/install/
@@ -13,12 +13,12 @@
   - Ref: https://docs.docker.com/compose/install/
 ```
 
-##Docker images:
+## Docker images:
   Here we are using NodeJs as base image to run front-end and mysql:5.6 base image for back-end and adding custom layers on top of them.
   By default, docker uses images from DockerHub. In order to fetch images from your own private repote, use 'docker login' to point docker to your own repo.
   OR, write custom dockerfile and build images.
   
-##Running application
+## Running application
 - Fork and clone the repository.
 - app/ directory includes all the files required to run the application.
 - build the custom noodejs image to run front-end 
