@@ -19,7 +19,7 @@
   By default, docker uses images from DockerHub. In order to fetch images from your own private repote, use 'docker login' to point docker to your own repo.
   OR, write custom dockerfile and build images.
   
-## Running application
+# Running application
 - Fork and clone the repository.
 - app/ directory includes all the files required to run the application.
 - build the custom noodejs image to run front-end 
