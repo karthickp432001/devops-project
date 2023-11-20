@@ -1,9 +1,11 @@
-# Nodejs applicaition deployment with mysql using docker-compose and k8s minikube.
-
-## <Using docker-compose>
+# <Nodejs applicaition deployment with mysql using docker-compose and k8s minikube.>
   ## application description
 - Simple todo-list web application using mysql to store tasks in mysql backend.
 - front technology is based on javascript, css, html using nodejs as runtime.
+
+- 
+## <Using docker-compose>
+
 
 ## Pre-requisites
 ```sh
@@ -44,6 +46,9 @@
     -d to run as daemon.
 
 Access application at : http://<host_ip>:Port
+
+
+
 
 
 
