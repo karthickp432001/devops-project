@@ -1,0 +1,57 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mysql-config
+data:
+  MYSQL_HOST: todo-mysql
+  MYSQL_USER: root
+  MYSQL_DB: todos
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: node-svc
+spec:
+  type: NodePort
+  ports:
+    - port: 80
+      targetPort: 3000
+  selector:
+    app: todo
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: node-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: todo
+  template:
+    metadata:
+      labels:
+        app: todo
+    spec:
+      containers:
+        - name: node
+          image: srini2410/node:v2
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 3000
+          env:
+          - name: MYSQL_PASSWORD
+            valueFrom:
+             secretKeyRef:
+              name: mysqlpwd
+              key: password
+          envFrom:
+          - configMapRef:
+              name: mysql-config
+          resources:
+           limits:
+             cpu: 120m
+             memory: 100Mi
+           requests:
+             cpu: 100m
+             memory: 100Mi
