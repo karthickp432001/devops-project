@@ -4,7 +4,7 @@
 - front technology is based on javascript, css, html using nodejs as runtime.
 
 - 
-##<Using docker-compose>
+## Using docker-compose
 ##Pre-requisites
 ```sh
 - Docker to containerise front-end and back-end
