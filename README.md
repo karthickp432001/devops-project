@@ -54,7 +54,7 @@ Access application at : http://<host_ip>:Port
 - minikube installation.
   - Ref: https://minikube.sigs.k8s.io/docs/start/
 ```
-# running minikube clouster:
+# running minikube cluster:
  After installing minikube, run minikube cluster with docker driver using below command,
    cmd: minikube start --driver=docker 
  To check the status of cluster:
