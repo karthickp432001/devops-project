@@ -1,6 +1,6 @@
 # Nodejs applicaition deployment with mysql using docker-compose and k8s minikube.
 
-## <Using docker-compose>
+## Using docker-compose
 ## application description
 - Simple todo-list web application using mysql to store tasks in mysql backend.
 
