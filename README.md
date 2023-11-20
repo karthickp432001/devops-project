@@ -5,7 +5,7 @@
 
 - 
 ## Using docker-compose
-##Pre-requisites
+## Pre-requisites
 ```sh
 - Docker to containerise front-end and back-end
   - Ref: https://docs.docker.com/engine/install/
