@@ -5,8 +5,6 @@
 
 - 
 ## <Using docker-compose>
-
-
 ## Pre-requisites
 ```sh
 - Docker to containerise front-end and back-end
