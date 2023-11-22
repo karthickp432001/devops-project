@@ -29,4 +29,5 @@ volumes:
 networks: 
   front-end:
   back-end:
+    internal: true
 
