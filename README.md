@@ -31,11 +31,19 @@
    ```sh
    NOTE: Add add confidential or hidden files to '.gitingore' file (create if not exist) to avoid pushing those files.
  
-- Add nodejs image in compose file and set environment variable for the application   to connect with database
+- Below are the environment variables to be used to deploy mysql and connect front-end with backend.
+
     ```sh
-    MYSQL_HOST=<DB_hostname>
-    MYSQL_USER=<user_name>
-    MYSQL_PASSWORD=<user_password>
+    env. variables to be passed in mysql image.
+     MY_SQL_ROOT_PASSWORD=<enter_your_password>
+     MYSQL_DATABASE=<database_name>
+    
+    env. variables to be passed in nodejs/front-end.
+     use above declared mysql env details while passing values for below variables inorder to connect nodejs to mysql.
+     MYSQL_HOST=<DB_hostname>
+     MYSQL_USER=<user_name>
+     MYSQL_PASSWORD=<user_password>
+     MYSQL_DB=<database_name>
     ```
 - Refer environment variables as file unde each service section in compose file   using 'env_file' parameter.
      
