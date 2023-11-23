@@ -1,14 +1,3 @@
-apiVersion: storage.k8s.io/v1
-kind: StorageClass
-metadata:
- name: sc-local
-provisioner: k8s.io/minikube-hostpath
-reclaimPolicy: Delete
-volumeBindingMode: Immediate
-allowVolumeExpansion: false
- 
----
- 
 apiVersion: v1
 kind: Secret
 metadata:
@@ -68,12 +57,7 @@ spec:
        volumeMounts:
        - mountPath: /var/lib/mysql
          name: todo-vol
- volumeClaimTemplates:
- - metadata:
-     name: todo-vol
-   spec:
-     storageClassName: sc-local
-     accessModes: [ "ReadWriteOnce" ]
-     resources:
-       requests:
-         storage: 1Gi
+     volumes:
+     - name: todo-vol
+       persistentVolumeClaim:
+         claimName: dev-pvc   

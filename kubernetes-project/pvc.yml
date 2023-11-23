@@ -1,0 +1,11 @@
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: dev-pvc
+spec:
+  accessModes:
+    - ReadWriteMany
+  storageClassName: "todo-sc"
+  resources:
+    requests:
+      storage: 1Gi
