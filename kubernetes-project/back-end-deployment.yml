@@ -1,3 +1,23 @@
+kind: StorageClass
+apiVersion: storage.k8s.io/v1
+metadata:
+  name: todo-sc
+provisioner: k8s.io/minikube-hostpath
+volumeBindingMode: Immediate
+reclaimPolicy: Delete
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: dev-pvc
+spec:
+  accessModes:
+    - ReadWriteMany
+  storageClassName: "todo-sc"
+  resources:
+    requests:
+      storage: 1Gi
+---
 apiVersion: v1
 kind: Secret
 metadata:
