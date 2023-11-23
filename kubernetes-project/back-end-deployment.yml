@@ -1,10 +1,24 @@
-kind: StorageClass
-apiVersion: storage.k8s.io/v1
+kind: PersistentVolume
+apiVersion: v1
 metadata:
-  name: todo-sc
-provisioner: k8s.io/minikube-hostpath
-volumeBindingMode: Immediate
-reclaimPolicy: Delete
+  name: dev-vol
+  labels:
+    type: local
+spec:
+  capacity:
+    storage: 2Gi
+  accessModes:
+    - ReadWriteMany
+  local:
+    path: /storage/mysql-data
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+        - matchExpressions:
+          - key: kubernetes.io/hostname
+            operator: In
+            values:
+            - minikube
 ---
 kind: PersistentVolumeClaim
 apiVersion: v1
@@ -13,7 +27,7 @@ metadata:
 spec:
   accessModes:
     - ReadWriteMany
-  storageClassName: "todo-sc"
+  storageClassName: ""
   resources:
     requests:
       storage: 1Gi
