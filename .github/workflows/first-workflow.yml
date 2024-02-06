@@ -2,7 +2,9 @@ name: first workflow
 on: push
 jobs:
   first_job:
-    runs-on: ububtu-latest
+    runs-on: ubuntu
     steps:
+    - name: using actions
+      uses: actions/checkout@v4
     - name: welcome message
-      run: echo 'hello srinivas'
+      run: ls
