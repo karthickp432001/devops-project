@@ -19,6 +19,7 @@ spec:
             operator: In
             values:
             - minikube
+            - single-node
 ---
 kind: PersistentVolumeClaim
 apiVersion: v1
