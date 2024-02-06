@@ -1,0 +1,8 @@
+name: first workflow
+on: push
+jobs:
+  first_job:
+    runs-on: ububtu-latest
+    steps:
+    - name: welcome message
+      run: echo 'hello srinivas'
