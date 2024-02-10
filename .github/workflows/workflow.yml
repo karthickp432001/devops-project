@@ -12,5 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: cat readme file
-        run: cat README.md
+        run: |
+          ls
+          cat README.md
         
