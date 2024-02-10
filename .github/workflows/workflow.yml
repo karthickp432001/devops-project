@@ -7,4 +7,6 @@ jobs:
     - name: using actions
       uses: actions/checkout@v4
     - name: welcome message
-      run: ls
+      run: |
+        ls
+        cat README.md
