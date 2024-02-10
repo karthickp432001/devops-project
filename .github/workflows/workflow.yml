@@ -7,6 +7,10 @@ jobs:
     - name: using actions
       uses: actions/checkout@v4
     - name: welcome message
-      run: |
-        ls
-        cat README.md
+      run: ls
+  second_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: cat readme file
+        run: cat README.md
+        
