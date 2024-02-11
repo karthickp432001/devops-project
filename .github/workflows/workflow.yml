@@ -19,6 +19,6 @@ jobs:
       - uses: actions/download-artifact@v4
         with:
          name: my-artifact
-      - name: cat ls.txt
-        run: cat ls.txt
+         path: kubernetes-project
+      - run: cat ls.txt
         
