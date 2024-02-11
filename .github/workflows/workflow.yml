@@ -19,6 +19,5 @@ jobs:
       - uses: actions/download-artifact@v4
         with:
          name: my-artifact
-         path: sample-project
       - run: cat ls.txt
         
