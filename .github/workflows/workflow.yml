@@ -7,13 +7,17 @@ jobs:
     - name: using actions
       uses: actions/checkout@v4
     - name: welcome message
-      run: ls
+      run: ls > ls.txt
+    - uses: actions/upload-artifact@v4
+      with:
+        name: my-artifact
+        path: ls.txt
   second_job:
     runs-on: ubuntu-latest
-    needs: first_job
     steps:
-      - name: using actions
-        uses: actions/checkout@v4
-      - name: cat readme file
-        run: cat README.md
+      - uses: actions/download-artifact@v4
+        with:
+         name: my-artifact
+      - name: cat ls.txt
+        run: cat ls.txt
         
